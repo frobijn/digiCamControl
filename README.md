@@ -1,18 +1,15 @@
-For developers visit http://www.digicamcontrol.com/doc/development/lib
+# Frank's Fork of digiCamControl
 
+[digiCamControl](http://digicamcontrol.com/) is DSLR camera remote control open source software.
+Frank's Fork was created from the [digiCamControl code](https://github.com/dukus/digiCamControl) version 2.1.6.
 
-[digiCamControl](http://digicamcontrol.com/)
-==============
+The fork has extra features and is backward compatible with the official digiCamControl version.
+The extra features are offered as PRs to digiCamControl. If all PRs are accepted, the fork will cease to exist.
 
-[![Join the chat at https://gitter.im/dukus/digiCamControl](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/dukus/digiCamControl?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## License
 
 DSLR camera remote control open source software
-
-==============
-Code transfered from : https://code.google.com/p/nikon-camera-control/
-
-digiCamControl - DSLR camera remote control open source software
-Copyright (C) 2014  Duka Istvan
+Copyright (C) 2014  Duka Istvan / 2026 Frank Robijn
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
