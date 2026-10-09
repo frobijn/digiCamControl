@@ -9,13 +9,19 @@ The extra features are offered as PRs to digiCamControl. If all PRs are accepted
 ## Additional features
 
 - In-camera bracketing support for Nikon cameras ([PR](https://github.com/dukus/digiCamControl/pull/427)).
+- Camera date/time synchronization using UTC ([PR](https://github.com/dukus/digiCamControl/pull/429)).
 
-## In-camera bracketing support for Nikon cameras
+### In-camera bracketing support for Nikon cameras
 
 digiCamControl supports bracketing, but then every picture is an individual capture in the application. That is relatively slow, about a second per image. In-camera bracketing is much faster. There are situations where that is required. E.g., if the target is moving (but not so fast). Or as part of a time lapse of a solar eclipse in the totality phase, where you need many images (7 - 9) for a HDR to capture the outer regions of the corona, but the totality may be quite short (1-2 minutes) so it is a challenge to collect sufficient HDR images for a smooth video.
 
 The in-camera AE bracketing properties are now available for Nikon cameras. In digiCamControl the bracketing can be configured. Also set the properties for continuous shooting and set the burst rate to the number of images in the bracket. If capture is started in digiCamControl, the camera then takes all images as fast as possible before control is returned to digiCamControl.
 
+### Camera date/time synchronization using UTC
+
+The time a picture is taken is available from the EXIF information. Unfortunately no time zone is registered, even if the camera internally supports time zones. For EXIF it uses what is configured as local time. If your travel takes you to various time zones the post-processing software may get confused. That's why I set the camera's time zone to UTC or Greenwich time and no daylight savings time; the EXIF timestamp is UTC independent of where the picture was taken.
+
+With this feature digiCamControl can be set up to also use UTC when synchronizing the camera's clock with the one of the PC. The accuracy of the synchronization is also improved.
 
 ## License
 
