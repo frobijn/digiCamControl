@@ -108,7 +108,8 @@ namespace CameraControl.Core.Translation
         public static string LabelFullscrenBack = "Full screen window background  ";
         public static string LabelTriggers = "Triggers";
         public static string LabelUseKeybordToTrigger = "Use keyboard to trigger take photo";
-        public static string LabelWebserver = "Webserver";
+        public static string LabelWebserverAndPipeServer = "Remote control";
+        public static string LabelUsePipeServer = "Use named pipe";
         public static string LabelUseWebserver = "Use web server";
         public static string LabelFocusAndLiveview = "Live view";
         public static string LabelSmallFocusSstep = "Small focus step";
