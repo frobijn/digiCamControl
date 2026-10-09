@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="digiCamControl by Duka Istvan" Height="380" Width="460" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Topmost="True" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" 
+        Title="Frank's Fork of digiCamControl" Height="380" Width="460" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" Topmost="True" WindowStyle="SingleBorderWindow" ResizeMode="NoResize" 
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -12,7 +12,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}" 
         >
-    
+
     <Grid>
         <!--<StackPanel Orientation="Horizontal">
             <StackPanel>
@@ -81,16 +81,8 @@
                 </StackPanel>
                 <Border Grid.Row="1" Grid.ColumnSpan="2" BorderThickness="0 1 0 0" BorderBrush="{DynamicResource MaterialDesignDivider}" Padding="8">
                     <DockPanel>
-                        <Button Style="{DynamicResource MaterialDesignFlatButton}" 
-                                DockPanel.Dock="Right"
-                                x:Name="DonateButton" Click="btn_donate_Click">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Gift" />
-                                <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Donate</TextBlock>
-                            </StackPanel>
-                        </Button>
                         <TextBlock Foreground="{DynamicResource MaterialDesignBodyLight}" TextWrapping="Wrap" Margin="16" VerticalAlignment="Center">
-                            Feel like you want to make a donation?  It would be gratefully received.  Click the button to donate via PayPal.
+                            Frank's fork adds functionality to v2.1.7 of digiCamControl. If that becomes available in a future release of digiCamControl, this fork will cease to exist. See the fork's site for details.
                         </TextBlock>
                     </DockPanel>
                 </Border>
@@ -111,6 +103,12 @@
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="Web" VerticalAlignment="Center" />
                             <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Site</TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{DynamicResource MaterialDesignFlatButton}" DockPanel.Dock="Right" Click="btn_fork_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <materialDesign:PackIcon Kind="Web" VerticalAlignment="Center" />
+                            <TextBlock Margin="8 0 0 0" VerticalAlignment="Center">Fork</TextBlock>
                         </StackPanel>
                     </Button>
                 </StackPanel>

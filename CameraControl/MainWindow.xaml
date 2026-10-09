@@ -262,11 +262,12 @@
             <MenuItem Header="{T:TranslateExtension MenuHelp}" Visibility="{Binding Branding.OnlineReference, Converter={StaticResource BooleanToVisibilityConverter}}" Padding="5,2" Margin="1">
                 <MenuItem Header="{T:TranslateExtension MenuOnlineManual}" Command="{Binding ManualPageCommand}"/>
                 <MenuItem Header="{T:TranslateExtension MenuHomePage}" Command="{Binding HomePageCommand}"/>
+                <MenuItem Header="Fork's home page" Command="{Binding ForkHomePageCommand}"/>
                 <MenuItem Header="{T:TranslateExtension MenuForum}" Command="{Binding ForumCommand}"/>
                 <Separator/>
-                <MenuItem Header="{T:TranslateExtension LabelSendTheLogFile}" Command="{Binding SendLogFileCommand}"/>
-                <MenuItem Header="{T:TranslateExtension MenuCheckForUpdate}" Command="{Binding CheckUpdateCommand}"/>
-                <MenuItem Header="{T:TranslateExtension LabelChangelog}" Command="{Binding ShowChangeLogCommand}"/>
+                <!--<MenuItem Header="{T:TranslateExtension LabelSendTheLogFile}" Command="{Binding SendLogFileCommand}"/>-->
+                <!--<MenuItem Header="{T:TranslateExtension MenuCheckForUpdate}" Command="{Binding CheckUpdateCommand}"/>-->
+                <!--<MenuItem Header="{T:TranslateExtension LabelChangelog}" Command="{Binding ShowChangeLogCommand}"/>-->
                 <MenuItem Header="{T:TranslateExtension MenuAbout}" Command="{Binding AboutCommand}"/>
             </MenuItem>
             <MenuItem Header="{T:TranslateExtension MenuHomePage}" Command="{Binding HomePageCommand}" Visibility="{Binding HomePageMenuVisible, Converter={StaticResource BooleanToVisibilityConverter}}" Padding="5,2" Margin="1"/>
