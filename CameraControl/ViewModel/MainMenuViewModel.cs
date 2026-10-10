@@ -26,6 +26,8 @@ namespace CameraControl.ViewModel
 
 		public GalaSoft.MvvmLight.Command.RelayCommand<string> SendCommand { get; set; }
 		public RelayCommand SettingsCommand { get; set; }
+		public RelayCommand ImportProjectCommand { get; set; }
+		public RelayCommand ExportProjectCommand { get; set; }
 		public GalaSoft.MvvmLight.Command.RelayCommand<string> ThumbSizeCommand { get; set; }
 		public GalaSoft.MvvmLight.Command.RelayCommand<string> SetLayoutCommand { get; set; }
 
@@ -176,6 +178,8 @@ namespace CameraControl.ViewModel
 
 			SendCommand = new GalaSoft.MvvmLight.Command.RelayCommand<string>(Send);
 			SettingsCommand = new RelayCommand(EditSettings);
+			ImportProjectCommand = new RelayCommand(ImportProjectDlg.ImportProject);
+			ExportProjectCommand = new RelayCommand(ExportProjectDlg.ExportProject);
 			ThumbSizeCommand = new GalaSoft.MvvmLight.Command.RelayCommand<string>(ThumbSize);
 			SetLayoutCommand = new GalaSoft.MvvmLight.Command.RelayCommand<string>(SetLayout);
 			SelectNoneCommand = new RelayCommand(delegate { ServiceProvider.Settings.DefaultSession.SelectNone(); });
@@ -319,14 +323,7 @@ namespace CameraControl.ViewModel
 		{
 			try
 			{
-				var defaultsessionfile = Path.Combine(Settings.SessionFolder, "Default.json");
-				var session = new PhotoSession();
-				// copy session with default name
-				if (File.Exists(defaultsessionfile))
-				{
-					session = ServiceProvider.Settings.LoadSession(defaultsessionfile);
-					session.Files.Clear();
-				}
+				var session = PhotoSession.CreateFromDefault();
 				var editSession = new EditSession(session);
 				editSession.Owner = ServiceProvider.PluginManager.SelectedWindow as Window;
 				if (editSession.ShowDialog() == true)
