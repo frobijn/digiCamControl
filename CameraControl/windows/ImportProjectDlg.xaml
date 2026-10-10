@@ -44,7 +44,7 @@
             <Label>Close tcl scripts before import</Label>
         </CheckBox>
         <CheckBox Name="cb_clear_objects" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="4">
-            <Label>Unregister external services/devices before impact</Label>
+            <Label>Unregister external services/devices before import</Label>
         </CheckBox>
 
         <ScrollViewer Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="4" Visibility="{Binding HasErrors}">
