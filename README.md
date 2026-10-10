@@ -8,9 +8,16 @@ The extra features are offered as PRs to digiCamControl. If all PRs are accepted
 
 ## Additional features
 
+- DCC project files to exchange settings/configurations/scripts between PCs ([PR](https://github.com/dukus/digiCamControl/pull/434)).
 - In-camera bracketing support for Nikon cameras ([PR](https://github.com/dukus/digiCamControl/pull/427)).
 - Camera date/time synchronization using UTC ([PR](https://github.com/dukus/digiCamControl/pull/429)).
 - Multiple cameras can be controlled independently by separate Tcl scripts ([PR](https://github.com/dukus/digiCamControl/pull/431)).
+- digiCamControl can communicate with external services that are not plugins ([PR](https://github.com/dukus/digiCamControl/pull/434)).
+
+### DCC project files
+
+It is now much easier to transfer selected application settings, camera settings, scripts and configurations of services
+and plugins (if they support that) between PC.
 
 ### In-camera bracketing support for Nikon cameras
 
@@ -31,6 +38,10 @@ In the user interface of digiCamControl multiple cameras can be controlled at th
 Sometimes the application should control multiple cameras that operate independently from each other. E.g., if multiple cameras are used for photographing solar eclipses (time lapses), each camera my have its own time lapse interval and camera properties. A camera with telephoto lens may use bracketing and take a lot of images with a short interval and only during totality, while a camera with wide angle lens may start minutes earlier to capture the sky's darkening and have a longer interval.
 
 This is now possible via tcl scripting. Multiple tcl scripts can run in parallel, each controlling a single camera. If one script stops because of a problem with the camera, the other scripts continue. It is possible to synchronise the scripts, e.g., to ensure they all start or stop at the same time, or use the same time lapse interval. With this feature tcl scripts have become a core feature of the application instead of a plugin tool.
+
+### External services that are not plugins
+
+digiCamControl can communicate with web services and devices connected via a serial port. The services/devices have to adhere to the technical specifications of digiCamControl. In that case the services/devices are self-describing: they inform digiCamControl which properties, triggers and events are supported. For triggers digiCamControl shows buttons in its UI. Properties, triggers and events can be used in scripts.
 
 ## License
 
