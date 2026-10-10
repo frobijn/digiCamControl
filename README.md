@@ -10,6 +10,7 @@ The extra features are offered as PRs to digiCamControl. If all PRs are accepted
 
 - In-camera bracketing support for Nikon cameras ([PR](https://github.com/dukus/digiCamControl/pull/427)).
 - Camera date/time synchronization using UTC ([PR](https://github.com/dukus/digiCamControl/pull/429)).
+- Multiple cameras can be controlled independently by separate Tcl scripts ([PR](https://github.com/dukus/digiCamControl/pull/431)).
 
 ### In-camera bracketing support for Nikon cameras
 
@@ -22,6 +23,14 @@ The in-camera AE bracketing properties are now available for Nikon cameras. In d
 The time a picture is taken is available from the EXIF information. Unfortunately no time zone is registered, even if the camera internally supports time zones. For EXIF it uses what is configured as local time. If your travel takes you to various time zones the post-processing software may get confused. That's why I set the camera's time zone to UTC or Greenwich time and no daylight savings time; the EXIF timestamp is UTC independent of where the picture was taken.
 
 With this feature digiCamControl can be set up to also use UTC when synchronizing the camera's clock with the one of the PC. The accuracy of the synchronization is also improved.
+
+### Multiple cameras can be controlled by independently by separate Tcl scripts
+
+In the user interface of digiCamControl multiple cameras can be controlled at the same time. That is: the application offers a way to have multiple cameras connected, show multiple live views, and capture images by each of the cameras with a single click. But that is not always sufficient.
+
+Sometimes the application should control multiple cameras that operate independently from each other. E.g., if multiple cameras are used for photographing solar eclipses (time lapses), each camera my have its own time lapse interval and camera properties. A camera with telephoto lens may use bracketing and take a lot of images with a short interval and only during totality, while a camera with wide angle lens may start minutes earlier to capture the sky's darkening and have a longer interval.
+
+This is now possible via tcl scripting. Multiple tcl scripts can run in parallel, each controlling a single camera. If one script stops because of a problem with the camera, the other scripts continue. It is possible to synchronise the scripts, e.g., to ensure they all start or stop at the same time, or use the same time lapse interval. With this feature tcl scripts have become a core feature of the application instead of a plugin tool.
 
 ## License
 

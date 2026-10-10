@@ -1,4 +1,4 @@
-#region Licence
+﻿#region Licence
 
 // Distributed under MIT License
 // ===========================================================
@@ -26,47 +26,21 @@
 
 #endregion
 
-#region
-
-using CameraControl.Devices;
-using CameraControl.Devices.Classes;
-
-#endregion
+#if true
+using System;
+#endif
 
 namespace CameraControl.Core.Classes
 {
-	public class CameraPropertyEnumerator
+	/// <summary>
+	/// Attribute that indicates that a property is not accessible for scripting. The reason typically is that the property
+	/// is derived from some other setting or that the property should be changed together with other properties from
+	/// (other) classes. It can also be applied to const fields of <see cref="CmdConsts"/> and
+	/// <see cref="WindowsCmdConsts"/> to exclude the command from the list of valid argument for the "Do" command, e.g.,
+	/// because a parameter value is required.
+	/// </summary>
+	[AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]
+	public sealed class TclScriptIgnoreAttribute : Attribute
 	{
-		public AsyncObservableCollection<CameraProperty> Items { get; set; }
-
-		public CameraPropertyEnumerator ()
-		{
-			Items = new AsyncObservableCollection<CameraProperty>();
-		}
-
-		public CameraProperty Get (ICameraDevice device)
-		{
-			if (device == null)
-				return new CameraProperty();
-			lock (Items)
-			{
-				// there is (still?) a threading error, but too lazy to find it. 
-				try
-				{
-					foreach (CameraProperty cameraProperty in Items)
-					{
-						if (cameraProperty.SerialNumber == device.SerialNumber)
-							return cameraProperty;
-					}
-				}
-				catch (System.Exception ex)
-				{
-					Log.Error("CameraProperty error", ex);
-				}
-				var c = new CameraProperty() { SerialNumber = device.SerialNumber, DeviceName = device.DisplayName };
-				Items.Add(c);
-				return c;
-			}
-		}
 	}
 }
