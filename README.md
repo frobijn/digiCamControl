@@ -19,11 +19,19 @@ The extra features are offered as PRs to digiCamControl. If all PRs are accepted
 It is now much easier to transfer selected application settings, camera settings, scripts and configurations of services
 and plugins (if they support that) between PC.
 
+![](README_Export.png)
+
+![](README_Import.png)
+
+![](README_Settings.png)
+
 ### In-camera bracketing support for Nikon cameras
 
 digiCamControl supports bracketing, but then every picture is an individual capture in the application. That is relatively slow, about a second per image. In-camera bracketing is much faster. There are situations where that is required. E.g., if the target is moving (but not so fast). Or as part of a time lapse of a solar eclipse in the totality phase, where you need many images (7 - 9) for a HDR to capture the outer regions of the corona, but the totality may be quite short (1-2 minutes) so it is a challenge to collect sufficient HDR images for a smooth video.
 
 The in-camera AE bracketing properties are now available for Nikon cameras. In digiCamControl the bracketing can be configured. Also set the properties for continuous shooting and set the burst rate to the number of images in the bracket. If capture is started in digiCamControl, the camera then takes all images as fast as possible before control is returned to digiCamControl.
+		
+![](README_Bracketing.png)
 
 ### Camera date/time synchronization using UTC
 
@@ -39,9 +47,19 @@ Sometimes the application should control multiple cameras that operate independe
 
 This is now possible via tcl scripting. Multiple tcl scripts can run in parallel, each controlling a single camera. If one script stops because of a problem with the camera, the other scripts continue. It is possible to synchronise the scripts, e.g., to ensure they all start or stop at the same time, or use the same time lapse interval. With this feature tcl scripts have become a core feature of the application instead of a plugin tool.
 
+![](README_Script_Menu.png)
+
+There is also help available as part of the application on the existing and new scripting features.
+
+![](README_Script_Help.png)
+
 ### External services that are not plugins
 
 digiCamControl can communicate with web services and devices connected via a serial port. The services/devices have to adhere to the technical specifications of digiCamControl. In that case the services/devices are self-describing: they inform digiCamControl which properties, triggers and events are supported. For triggers digiCamControl shows buttons in its UI. Properties, triggers and events can be used in scripts.
+
+![](README_Services.png)
+
+![](README_Buttons.png)
 
 ## License
 
