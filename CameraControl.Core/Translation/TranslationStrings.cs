@@ -46,6 +46,8 @@ namespace CameraControl.Core.Translation
         public static string CapturePhotoNoAfToolTip = "Capture photo no auto focus";
         public static string BraketingToolTip = "Bracketing";
         public static string SettingsToolTip = "Settings";
+        public static string ImportProjectToolTip = "Import project";
+        public static string ExportProjectToolTip = "Export project";
         public static string TimeLapseToolTip = "Time lapse";
         public static string FullscreenToolTip = "Fullscreen";
         public static string LiveViewToolTip = "Live view";
