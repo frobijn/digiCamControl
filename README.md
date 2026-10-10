@@ -1,10 +1,12 @@
 # Frank's Fork of digiCamControl
 
 [digiCamControl](http://digicamcontrol.com/) is DSLR camera remote control open source software.
-Frank's Fork was created from the [digiCamControl code](https://github.com/dukus/digiCamControl) version 2.1.6.
+Frank's Fork was created from the [digiCamControl code](https://github.com/dukus/digiCamControl) version 2.1.7.
 
 The fork has extra features and is backward compatible with the official digiCamControl version.
 The extra features are offered as PRs to digiCamControl. If all PRs are accepted, the fork will cease to exist.
+
+Download and install the [setup](https://github.com/frobijn/digiCamControl/releases/download/2.2.0.0/digiCamControlsetup_2.2.0.0.msi) labelled digiCamControl 2.2.0.0 to experiment with the new features.
 
 ## Additional features
 
@@ -60,6 +62,11 @@ digiCamControl can communicate with web services and devices connected via a ser
 ![](README_Services.png)
 
 ![](README_Buttons.png)
+
+See the [Examples\Tcl scripts] directory for sample scripts, a .NET 10 web service and an Arduino sketch for a device that communicates via the serial port. The specifications for the services are described in:
+
+- [REST service](https://github.com/frobijn/digiCamControl/blob/fork_master/CameraControl.Plugins/ScriptExternalObjectPlugins/RestServiceProvider.cs)
+- [Serial device](https://github.com/frobijn/digiCamControl/blob/fork_master/CameraControl.Plugins/ScriptExternalObjectPlugins/SerialServiceProvider.cs)
 
 ## License
 
